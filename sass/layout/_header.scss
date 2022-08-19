@@ -5,12 +5,24 @@
   display: grid;
   grid-template-rows: 17rem;
   grid-template-columns:
-    [full-start]minmax(10rem, 1fr) [center-start] repeat(
-      12,
-      [col-start] 6.5rem [col-end]
-    )
-    [center-end]minmax(10rem, 1fr) [full-end];
+    [full-start] 1fr [center-start] repeat(12, [col-start] 6.5rem [col-end])
+    [center-end]1fr [full-end];
   column-gap: 3rem;
+  @include respond(tab-port) {
+    grid-template-columns:
+      [full-start] 1fr [center-start] repeat(12, [col-start] 4.8rem [col-end])
+      [center-end] 1fr [full-end];
+    column-gap: 1rem;
+  }
+  @include respond(phone) {
+    grid-template-columns:
+      [full-start] 1fr [center-start] repeat(
+        12,
+        [col-start] minmax(min-content, 2.8rem) [col-end]
+      )
+      [center-end] 1fr [full-end];
+    column-gap: 0.5rem;
+  }
 
   .logo {
     grid-column: col-start 6 / col-end 7;
@@ -22,21 +34,54 @@
 
     display: grid;
     grid-template-columns:
-      [full-start]minmax(10rem, 1fr) [center-start] repeat(
-        12,
-        [col-start] 6.5rem [col-end]
-      )
-      [center-end]minmax(10rem, 1fr) [full-end];
+      [full-start]1fr [center-start] repeat(12, [col-start] 6.5rem [col-end])
+      [center-end]1fr [full-end];
     column-gap: 3rem;
+    @include respond(tab-port) {
+      grid-template-columns:
+        [full-start] 1fr [center-start] repeat(12, [col-start] 4.8rem [col-end])
+        [center-end] 1fr [full-end];
+      column-gap: 1rem;
+    }
+    @include respond(phone) {
+      grid-template-columns:
+        [full-start] 1fr [center-start] repeat(
+          12,
+          [col-start] minmax(min-content, 2.8rem) [col-end]
+        )
+        [center-end] 1fr [full-end];
+      column-gap: 0.5rem;
+    }
     align-items: center;
 
     margin-bottom: 11rem;
+    &__img--tablet {
+      display: none;
+      @include respond(tab-port) {
+        display: block;
+        width: 100%;
+        grid-column: full-start/full-end;
+      }
+    }
     &__img--left {
       grid-column: full-start/col-end 3;
+      @include respond(tab-port) {
+        display: none;
+      }
     }
 
     &__content {
       grid-column: col-start 4 / col-end 9;
+      @include respond(tab-land) {
+        grid-row: 2/3;
+        margin-top: 7.2rem;
+      }
+      @include respond(tab-port) {
+        grid-column: col-start 3 / col-end 10;
+      }
+      @include respond(phone) {
+        grid-column: full-start / full-end;
+      }
       text-align: center;
       //
       &__heading {
@@ -58,16 +103,31 @@
         font-weight: 500;
         line-height: 2.6rem;
         margin-bottom: 3.2rem;
+        @include respond(phone) {
+          padding: 0 6rem;
+        }
       }
     }
 
     &__img--right {
       grid-column: col-start 10 / full-end;
+      @include respond(tab-port) {
+        display: none;
+      }
       justify-self: end;
     }
   }
 
   .page-icon--1 {
     grid-column: col-start 6 / col-end 7;
+  }
+}
+
+@include respond(phone) {
+  .hero__btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }

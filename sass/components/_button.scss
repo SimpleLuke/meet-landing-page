@@ -17,6 +17,10 @@
     &--hero {
       background-color: $color-primary-dark;
       margin-right: 1.6rem;
+      @include respond(phone) {
+        margin-right: 0;
+        margin-bottom: 1.6rem;
+      }
       &--ver {
         color: $color-primary-light;
       }

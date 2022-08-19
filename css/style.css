@@ -25,7 +25,7 @@ ORDER: Base + typography > general layout + grid > page layout > components
 html {
   box-sizing: border-box;
   font-size: 62.5%; }
-  @media only screen and (max-width: 75em) {
+  @media only screen and (max-width: 83.12em) {
     html {
       font-size: 56.25%; } }
   @media only screen and (max-width: 56.25em) {
@@ -76,6 +76,10 @@ body {
 .btn--download--hero {
   background-color: #4d96a9;
   margin-right: 1.6rem; }
+  @media only screen and (max-width: 37.5em) {
+    .btn--download--hero {
+      margin-right: 0;
+      margin-bottom: 1.6rem; } }
   .btn--download--hero--ver {
     color: #8fe3f9; }
   .btn--download--hero:hover, .btn--download--hero:active {
@@ -117,23 +121,59 @@ body {
   grid-column: full-start/full-end;
   display: grid;
   grid-template-rows: 17rem;
-  grid-template-columns: [full-start] minmax(10rem, 1fr) [center-start] repeat(12, [col-start] 6.5rem [col-end]) [center-end] minmax(10rem, 1fr) [full-end];
+  grid-template-columns: [full-start] 1fr [center-start] repeat(12, [col-start] 6.5rem [col-end]) [center-end] 1fr [full-end];
   column-gap: 3rem; }
+  @media only screen and (max-width: 56.25em) {
+    .header {
+      grid-template-columns: [full-start] 1fr [center-start] repeat(12, [col-start] 4.8rem [col-end]) [center-end] 1fr [full-end];
+      column-gap: 1rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .header {
+      grid-template-columns: [full-start] 1fr [center-start] repeat(12, [col-start] minmax(min-content, 2.8rem) [col-end]) [center-end] 1fr [full-end];
+      column-gap: 0.5rem; } }
   .header .logo {
     grid-column: col-start 6 / col-end 7;
     margin: auto; }
   .header .hero {
     grid-column: full-start/full-end;
     display: grid;
-    grid-template-columns: [full-start] minmax(10rem, 1fr) [center-start] repeat(12, [col-start] 6.5rem [col-end]) [center-end] minmax(10rem, 1fr) [full-end];
+    grid-template-columns: [full-start] 1fr [center-start] repeat(12, [col-start] 6.5rem [col-end]) [center-end] 1fr [full-end];
     column-gap: 3rem;
     align-items: center;
     margin-bottom: 11rem; }
+    @media only screen and (max-width: 56.25em) {
+      .header .hero {
+        grid-template-columns: [full-start] 1fr [center-start] repeat(12, [col-start] 4.8rem [col-end]) [center-end] 1fr [full-end];
+        column-gap: 1rem; } }
+    @media only screen and (max-width: 37.5em) {
+      .header .hero {
+        grid-template-columns: [full-start] 1fr [center-start] repeat(12, [col-start] minmax(min-content, 2.8rem) [col-end]) [center-end] 1fr [full-end];
+        column-gap: 0.5rem; } }
+    .header .hero__img--tablet {
+      display: none; }
+      @media only screen and (max-width: 56.25em) {
+        .header .hero__img--tablet {
+          display: block;
+          width: 100%;
+          grid-column: full-start/full-end; } }
     .header .hero__img--left {
       grid-column: full-start/col-end 3; }
+      @media only screen and (max-width: 56.25em) {
+        .header .hero__img--left {
+          display: none; } }
     .header .hero__content {
       grid-column: col-start 4 / col-end 9;
       text-align: center; }
+      @media only screen and (max-width: 83.12em) {
+        .header .hero__content {
+          grid-row: 2/3;
+          margin-top: 7.2rem; } }
+      @media only screen and (max-width: 56.25em) {
+        .header .hero__content {
+          grid-column: col-start 3 / col-end 10; } }
+      @media only screen and (max-width: 37.5em) {
+        .header .hero__content {
+          grid-column: full-start / full-end; } }
       .header .hero__content__heading {
         font-size: 6.4rem;
         line-height: 6.4rem;
@@ -149,38 +189,93 @@ body {
         font-weight: 500;
         line-height: 2.6rem;
         margin-bottom: 3.2rem; }
+        @media only screen and (max-width: 37.5em) {
+          .header .hero__content__paragraph {
+            padding: 0 6rem; } }
     .header .hero__img--right {
       grid-column: col-start 10 / full-end;
       justify-self: end; }
+      @media only screen and (max-width: 56.25em) {
+        .header .hero__img--right {
+          display: none; } }
   .header .page-icon--1 {
     grid-column: col-start 6 / col-end 7; }
+
+@media only screen and (max-width: 37.5em) {
+  .hero__btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; } }
 
 .introduction {
   grid-column: center-start/center-end;
   display: grid;
   grid-template-columns: repeat(12, [col-start] 6.5rem [col-end]);
   column-gap: 3rem; }
+  @media only screen and (max-width: 56.25em) {
+    .introduction {
+      grid-template-columns: repeat(12, [col-start] 4.8rem [col-end]);
+      column-gap: 1rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .introduction {
+      grid-template-columns: repeat(12, [col-start] minmax(min-content, 2.8rem) [col-end]);
+      column-gap: 0.5rem; } }
   .introduction__user-photos {
     grid-column: col-start 1 / col-end 12;
     display: grid;
     grid-template-columns: repeat(12, [col-start] 6.5rem [col-end]);
     column-gap: 3rem;
     margin-bottom: 8rem; }
+    @media only screen and (max-width: 56.25em) {
+      .introduction__user-photos {
+        grid-template-columns: repeat(12, [col-start] 4.8rem [col-end]);
+        column-gap: 1rem; } }
+    @media only screen and (max-width: 37.5em) {
+      .introduction__user-photos {
+        grid-template-columns: repeat(12, [col-start] minmax(min-content, 2.8rem) [col-end]);
+        column-gap: 0.5rem; } }
     .introduction__user-photos img {
       width: 24rem;
       border-radius: 6px; }
+      @media only screen and (max-width: 56.25em) {
+        .introduction__user-photos img {
+          width: 16.4rem; } }
+      @media only screen and (max-width: 37.5em) {
+        .introduction__user-photos img {
+          width: 15.1rem;
+          height: 14.3rem; } }
     .introduction__user-photos--1 {
-      grid-column: col-start 1 / col-end 3; }
+      grid-column: col-start 1 / col-end 3;
+      margin-bottom: 2.4rem; }
     .introduction__user-photos--2 {
-      grid-column: col-start 4 / col-end 6; }
+      grid-column: col-start 4 / col-end 6;
+      margin-bottom: 2.4rem; }
     .introduction__user-photos--3 {
       grid-column: col-start 7 / col-end 9; }
     .introduction__user-photos--4 {
       grid-column: col-start 10 / col-end 12; }
+    @media only screen and (max-width: 37.5em) {
+      .introduction__user-photos--1 {
+        grid-column: col-start 3 / col-end 6;
+        margin-bottom: 2.4rem; }
+      .introduction__user-photos--2 {
+        grid-column: col-start 7 / col-end 9;
+        margin-bottom: 2.4rem; }
+      .introduction__user-photos--3 {
+        grid-column: col-start 3 / col-end 6; }
+      .introduction__user-photos--4 {
+        grid-column: col-start 7 / col-end 9; } }
   .introduction__content {
     grid-column: col-start 4 / col-end 9;
     text-align: center;
     margin-bottom: 7.2rem; }
+    @media only screen and (max-width: 56.25em) {
+      .introduction__content {
+        grid-column: col-start 2 / col-end 11; } }
+    @media only screen and (max-width: 56.25em) {
+      .introduction__content {
+        grid-column: col-start 1 / col-end 12; } }
     .introduction__content__heading--3 {
       font-size: 1.6rem;
       font-weight: 900;
@@ -196,6 +291,9 @@ body {
       color: #28283d;
       padding: 0 6rem;
       margin-bottom: 3.2rem; }
+      @media only screen and (max-width: 37.5em) {
+        .introduction__content__heading--2 {
+          padding: 0; } }
     .introduction__content__paragraph {
       font-size: 1.8rem;
       line-height: 2.6rem;
@@ -210,29 +308,71 @@ body {
   background-size: cover;
   display: grid;
   grid-template-rows: max-content;
-  grid-template-columns: [full-start] minmax(10rem, 1fr) [center-start] repeat(12, [col-start] 6.5rem [col-end]) [center-end] minmax(10rem, 1fr) [full-end];
+  grid-template-columns: [full-start] 1fr [center-start] repeat(12, [col-start] 6.5rem [col-end]) [center-end] 1fr [full-end];
   column-gap: 3rem;
   align-items: center;
   padding: 11rem 0; }
+  @media only screen and (max-width: 56.25em) {
+    .footer {
+      background-image: linear-gradient(0deg, rgba(77, 150, 169, 0.9), rgba(77, 150, 169, 0.9)), url(../assets/tablet/image-footer.jpg); } }
+  @media only screen and (max-width: 56.25em) {
+    .footer {
+      grid-template-columns: [full-start] 1fr [center-start] repeat(12, [col-start] 4.8rem [col-end]) [center-end] 1fr [full-end];
+      column-gap: 1rem;
+      padding: 9.2rem 0 6.6rem 0; } }
+  @media only screen and (max-width: 37.5em) {
+    .footer {
+      grid-template-columns: [full-start] 1fr [center-start] repeat(12, [col-start] minmax(min-content, 2.8rem) [col-end]) [center-end] 1fr [full-end];
+      column-gap: 0.5rem; } }
   .footer__heading--2 {
     grid-column: col-start 1 / col-end 4;
     font-size: 4rem;
     font-weight: 900;
     line-height: 4.4rem;
-    color: #fafafa; }
+    color: #fafafa;
+    text-align: center; }
+    @media only screen and (max-width: 56.25em) {
+      .footer__heading--2 {
+        grid-column: col-start 4 / col-end 9;
+        margin-bottom: 3.2rem; } }
+    @media only screen and (max-width: 56.25em) {
+      .footer__heading--2 {
+        grid-column: col-start 1 / col-end 12;
+        margin-bottom: 3.2rem; } }
   .footer__text {
     grid-column: col-start 6 / col-end 9;
     font-size: 1.8rem;
     line-height: 2.6rem;
     font-weight: 500;
-    color: #fafafa; }
+    color: #fafafa;
+    text-align: center; }
+    @media only screen and (max-width: 56.25em) {
+      .footer__text {
+        grid-column: col-start 2 / col-end 11;
+        margin-bottom: 4rem; } }
   .footer .btn--download--footer {
     grid-column: col-start 10 / col-end 12;
     justify-self: end; }
+    @media only screen and (max-width: 56.25em) {
+      .footer .btn--download--footer {
+        grid-column: col-start 5 / col-end 8;
+        justify-self: center; } }
+    @media only screen and (max-width: 37.5em) {
+      .footer .btn--download--footer {
+        grid-column: col-start 4 / col-end 9;
+        justify-self: center; } }
 
 .container {
   display: grid;
   grid-template-rows: 100vh repeat(2, minmix(min-content, max-content));
-  grid-template-columns: [full-start] minmax(10rem, 1fr) [center-start] repeat(12, [col-start] 6.5rem [col-end]) [center-end] minmax(10rem, 1fr) [full-end];
+  grid-template-columns: [full-start] 1fr [center-start] repeat(12, [col-start] 6.5rem [col-end]) [center-end] 1fr [full-end];
   column-gap: 3rem;
   row-gap: 1rem; }
+  @media only screen and (max-width: 56.25em) {
+    .container {
+      grid-template-columns: [full-start] 1fr [center-start] repeat(12, [col-start] 4.8rem [col-end]) [center-end] 1fr [full-end];
+      column-gap: 1rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .container {
+      grid-template-columns: [full-start] 1fr [center-start] repeat(12, [col-start] minmax(min-content, 2.8rem) [col-end]) [center-end] 1fr [full-end];
+      column-gap: 0.5rem; } }
