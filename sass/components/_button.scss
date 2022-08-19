@@ -9,18 +9,31 @@
   padding: 1.6rem 3rem;
   text-decoration: none;
   cursor: pointer;
+  transition: all 0.2s;
 }
 
 .btn {
   &--download {
-    background-color: $color-primary-dark;
-    margin-right: 1.6rem;
-    &--ver {
-      color: $color-primary-light;
+    &--hero {
+      background-color: $color-primary-dark;
+      margin-right: 1.6rem;
+      &--ver {
+        color: $color-primary-light;
+      }
+      &:hover,
+      &:active {
+        background-color: $color-primary-hover;
+      }
     }
-    &:hover,
-    &:active {
-      background-color: $color-primary-hover;
+    &--footer {
+      background-color: $color-secondary-dark;
+      &:hover,
+      &:active {
+        background-color: $color-secondary-hover;
+      }
+      &--ver {
+        color: $color-secondary-light;
+      }
     }
   }
   &--what {

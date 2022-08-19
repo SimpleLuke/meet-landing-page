@@ -1,4 +1,45 @@
 .footer {
-  background-color: green;
   grid-column: full-start/full-end;
+
+  background-image: linear-gradient(
+      0deg,
+      rgba($color-primary-dark, 0.9),
+      rgba($color-primary-dark, 0.9)
+    ),
+    url(../assets/desktop/image-footer.jpg);
+  background-size: cover;
+
+  display: grid;
+  grid-template-rows: max-content;
+  grid-template-columns:
+    [full-start]minmax(10rem, 1fr) [center-start] repeat(
+      12,
+      [col-start] 6.5rem [col-end]
+    )
+    [center-end]minmax(10rem, 1fr) [full-end];
+  column-gap: 3rem;
+  align-items: center;
+
+  padding: 11rem 0;
+
+  &__heading--2 {
+    grid-column: col-start 1 / col-end 4;
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 4.4rem;
+    color: $color-white;
+  }
+
+  &__text {
+    grid-column: col-start 6 / col-end 9;
+    font-size: 1.8rem;
+    line-height: 2.6rem;
+    font-weight: 500;
+    color: $color-white;
+  }
+
+  .btn--download--footer {
+    grid-column: col-start 10 / col-end 12;
+    justify-self: end;
+  }
 }
