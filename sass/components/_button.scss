@@ -1,0 +1,33 @@
+.btn:link,
+.btn:visited {
+  font-size: 1.6rem;
+  display: inline-block;
+  outline: none;
+  border: none;
+  border-radius: 2.9rem;
+  color: white;
+  padding: 1.6rem 3rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn {
+  &--download {
+    background-color: $color-primary-dark;
+    margin-right: 1.6rem;
+    &--ver {
+      color: $color-primary-light;
+    }
+    &:hover,
+    &:active {
+      background-color: $color-primary-hover;
+    }
+  }
+  &--what {
+    background-color: $color-secondary-dark;
+    &:hover,
+    &:active {
+      background-color: $color-secondary-hover;
+    }
+  }
+}

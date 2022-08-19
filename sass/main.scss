@@ -10,10 +10,15 @@
 @import "base/utilities";
 
 //COMPONENTS FOLDERS
+@import "./components/button";
 
 //LAYOUT FOLDERS
+@import "./layout/header";
+@import "./layout/introduction";
+@import "./layout/footer";
 
 //PAGES FOLDERS
+@import "./pages/home";
 
 //THEMES FOLDERS
 
